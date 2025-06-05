@@ -12,21 +12,21 @@ function Nutrition(props) {
             </span>
         </div>
         <div className='proteine dataNutrion'>
-            <i class="fa-solid fa-drumstick-bite"></i>
+            <i className="fa-solid fa-drumstick-bite"></i>
             <span>
                 <h4>{props.proteinCount}g</h4>
                 <p>Proteines</p>
             </span>
         </div>
         <div className='glucide dataNutrion'>
-            <i class="fa-solid fa-apple-whole"></i>
+            <i className="fa-solid fa-apple-whole"></i>
             <span>
                 <h4>{props.carbohydrateCount}g</h4>
                 <p>Glucides</p>
             </span>
         </div>
         <div className='lipide dataNutrion'>
-            <i class="fa-solid fa-burger"></i>
+            <i className="fa-solid fa-burger"></i>
             <span>
                 <h4>{props.lipidCount}g</h4>
                 <p>Lipides</p>

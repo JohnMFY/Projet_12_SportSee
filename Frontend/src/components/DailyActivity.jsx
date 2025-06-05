@@ -4,7 +4,6 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'rec
 
 function DailyActivity() {
      const [data, setData] = useState(null)
-     
       useEffect(()=>{
           fetch(`http://localhost:3000/user/12/activity`)
           .then((res) => {
@@ -12,10 +11,9 @@ function DailyActivity() {
           })
           .then(data => {
               setData(data)
-              console.log(data.data.sessions);
           })
       },[]);
-      console.log(data.data.sessions)
+
   return (
     <div className='dailyActivity'>
       <h3>Activité quotidienne</h3>

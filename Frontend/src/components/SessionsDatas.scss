@@ -1,6 +1,10 @@
 .sessionsDatas{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+    .activitiesTime{
+        background-color: lightgray;
+        width: 33%;
+    }
 }

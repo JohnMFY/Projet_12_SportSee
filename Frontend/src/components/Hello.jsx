@@ -12,5 +12,4 @@ function Hello(props) {
     </div>
   )
 }
-
 export default Hello
