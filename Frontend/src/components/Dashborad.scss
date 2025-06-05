@@ -1,0 +1,15 @@
+.dashboard{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 4%;
+    .dashboardData{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        width: 100%;
+        .dashboardGraph{
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+}

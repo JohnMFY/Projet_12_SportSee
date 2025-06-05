@@ -1,4 +1,5 @@
 import React from 'react'
+import "./SessionsDatas.scss"
 
 function SessionsDatas() {
   return (
