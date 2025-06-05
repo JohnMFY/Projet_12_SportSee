@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     flex-flow: column nowrap;
-    height: max-content;
+    width: 20%;
     height: 55vh;
     .dataNutrion{
         display: flex;
@@ -11,7 +11,7 @@
         align-items: center;
         justify-content: space-around;
         background-color: #FBFBFB;
-        padding: 5% 20%;
+        padding: 5% 10%;
         width: 150px;
         border-radius: 10px;
         h4{

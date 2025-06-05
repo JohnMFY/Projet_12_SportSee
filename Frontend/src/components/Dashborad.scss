@@ -4,7 +4,7 @@
     padding: 4%;
     .dashboardData{
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: space-between;
         width: 100%;
         .dashboardGraph{

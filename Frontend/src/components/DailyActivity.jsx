@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./DailyActivity.scss"
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
 
 function DailyActivity() {
      const [data, setData] = useState(null)
@@ -11,22 +12,22 @@ function DailyActivity() {
           })
           .then(data => {
               setData(data)
-              console.log(data);
+              console.log(data.data.sessions);
           })
       },[]);
-      console.log(data)
+      console.log(data.data.sessions)
   return (
     <div className='dailyActivity'>
-      DailyActivity
-      {data &&
-      <BarChart width={730} height={250} data={data}>
+      <h3>Activité quotidienne</h3>
+     {data &&
+      <BarChart width={1000} height={250} data={data.data.sessions}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="day" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
+        <Bar dataKey="kilogram" fill="#282D30" />
+        <Bar dataKey="calories" fill="#E60000" />
       </BarChart>}
     </div>
   )

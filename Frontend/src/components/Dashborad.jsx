@@ -16,7 +16,6 @@ function Dashborad() {
         })
         .then(data => {
             setData(data)
-            console.log(data);
         })
     },[]);
     
