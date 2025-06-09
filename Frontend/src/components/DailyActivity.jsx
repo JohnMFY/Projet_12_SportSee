@@ -16,16 +16,16 @@ function DailyActivity() {
 
   return (
     <div className='dailyActivity'>
-      <h3>Activité quotidienne</h3>
+    <h3 >Activité quotidienne</h3>
      {data &&
-      <BarChart width={1000} height={250} data={data.data.sessions}>
-        <CartesianGrid strokeDasharray="3 3" />
+      <BarChart barGap='15' width={1000} height={250} data={data.data.sessions}>
+        <CartesianGrid strokeDasharray="5 5"/>
         <XAxis dataKey="day" />
-        <YAxis />
+        <YAxis orientation="right" />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="kilogram" fill="#282D30" />
-        <Bar dataKey="calories" fill="#E60000" />
+        <Legend iconType="circle" verticalAlign="top" align="right"/>
+        <Bar name="Poids (kg)" barSize={10} radius={[5, 5, 0, 0]} dataKey="kilogram" fill="#282D30"/>
+        <Bar name="Calories brûlées (kCal)" barSize={10} radius={[5, 5, 0, 0]} dataKey="calories" fill="#E60000" />
       </BarChart>}
     </div>
   )

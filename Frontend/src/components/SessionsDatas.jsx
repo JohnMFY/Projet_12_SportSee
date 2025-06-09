@@ -45,11 +45,11 @@ function SessionsDatas() {
         <div className='intensity'>
             {performanceData &&
             <RadarChart outerRadius={90} width={500} height={250} data={performanceData}>
-              <PolarGrid />
-              <PolarAngleAxis dataKey="data.data.value" />
-              <PolarRadiusAxis angle={30} domain={[0, 150]} />
-              <Radar dataKey="data.kind" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-              <Legend />
+                <PolarGrid gridType="polygon" radialLines={false}/>
+                <PolarAngleAxis dataKey="performanceData.data.kind" />
+                <PolarRadiusAxis angle={30} domain={[0, 150]} />
+                <Radar dataKey="performanceData.data.data.value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Legend />
             </RadarChart>}
         </div>
         <div className='score'>
