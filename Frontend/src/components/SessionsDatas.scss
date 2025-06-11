@@ -1,8 +1,8 @@
 .sessionsDatas{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     width: 100%;
+    max-width: 1200px;
     .activitiesTime{
         background-color: lightgray;
         width: 33%;

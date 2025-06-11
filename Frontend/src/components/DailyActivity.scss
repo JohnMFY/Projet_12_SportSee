@@ -1,7 +1,11 @@
 .dailyActivity{
-    background-color: none;
     display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    padding: 1%;
+    h3{
+        position:absolute;
+        margin-top: 0%;
+    }
 }

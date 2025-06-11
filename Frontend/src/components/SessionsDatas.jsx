@@ -32,7 +32,7 @@ function SessionsDatas() {
     <div className='sessionsDatas'>
         <div className='activitiesTime'>
             {activitiesTimeData &&
-            <LineChart width={500} height={250} data={activitiesTimeData.data.sessions}
+            <LineChart width={395} height={250} data={activitiesTimeData.data.sessions}
               margin={{ top: 5, right: 100, left: -20, bottom: 10}}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="day" />
@@ -43,12 +43,12 @@ function SessionsDatas() {
             </LineChart>}
         </div>
         <div className='intensity'>
-            {performanceData &&
-            <RadarChart outerRadius={90} width={500} height={250} data={performanceData}>
-                <PolarGrid gridType="polygon" radialLines={false}/>
-                <PolarAngleAxis dataKey="performanceData.data.kind" />
+         {performanceData &&
+            <RadarChart outerRadius={90} width={395} height={250} data={performanceData}>
+                <PolarGrid/>
+                <PolarAngleAxis dataKey="data.kind" />
                 <PolarRadiusAxis angle={30} domain={[0, 150]} />
-                <Radar dataKey="performanceData.data.data.value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Radar dataKey="data.data.value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
                 <Legend />
             </RadarChart>}
         </div>
