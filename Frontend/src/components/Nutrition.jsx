@@ -1,37 +1,34 @@
 import React from 'react'
 import "./Nutrition.scss"
+import NutritionCard from './NutritionCard'
 
 function Nutrition(props) {
   return (
     <div className='nutrition'>
-        <div className='calorie dataNutrion'>
-            <i className="fa-solid fa-fire fa-xl"></i>
-            <span>
-                <h4>{props.calorieCount}kCal</h4>
-                <p>Calories</p>
-            </span>
-        </div>
-        <div className='proteine dataNutrion'>
-            <i className="fa-solid fa-drumstick-bite"></i>
-            <span>
-                <h4>{props.proteinCount}g</h4>
-                <p>Proteines</p>
-            </span>
-        </div>
-        <div className='glucide dataNutrion'>
-            <i className="fa-solid fa-apple-whole"></i>
-            <span>
-                <h4>{props.carbohydrateCount}g</h4>
-                <p>Glucides</p>
-            </span>
-        </div>
-        <div className='lipide dataNutrion'>
-            <i className="fa-solid fa-burger"></i>
-            <span>
-                <h4>{props.lipidCount}g</h4>
-                <p>Lipides</p>
-            </span>
-        </div>
+        <NutritionCard
+            iconClass="fa-solid fa-fire fa-xl"
+            calorieUnit="kCal"
+            calorieCount={props.calorieCount}
+            nutritionType="Calories"
+        />
+        <NutritionCard
+            iconClass="fa-solid fa-drumstick-bite fa-xl"
+            calorieUnit="g"
+            calorieCount={props.proteinCount}
+            nutritionType="Proteines"
+        />
+        <NutritionCard
+            iconClass="fa-solid fa-apple-whole fa-xl"
+            calorieUnit="g"
+            calorieCount={props.carbohydrateCount}
+            nutritionType="Glucides"
+        />
+        <NutritionCard
+            iconClass="fa-solid fa-burger fa-xl"
+            calorieUnit="g"
+            calorieCount={props.lipidCount}
+            nutritionType="Lipides"
+        />
     </div>
   )
 }

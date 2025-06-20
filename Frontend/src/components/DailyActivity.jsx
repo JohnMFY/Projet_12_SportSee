@@ -15,7 +15,7 @@ function DailyActivity() {
       },[]);
 
   return (
-    <div className='dailyActivity'>
+    <div className='dailyActivity graph'>
     <h3>Activité quotidienne</h3>
      {data &&
       <BarChart barGap='10' width={1200} height={250} data={data.data.sessions}>

@@ -29,10 +29,11 @@ function Dashborad() {
         <div className='dashboardData'>
           <div className='dashboardGraph'>
             <DailyActivity/>
-            <SessionsDatas/>
+            {data && <SessionsDatas
+              todayScore={data.data.todayScore} 
+            />}
           </div>
-          {data &&
-          <Nutrition
+          {data && <Nutrition
           calorieCount={data.data.keyData.calorieCount}
           proteinCount={data.data.keyData.proteinCount}
           carbohydrateCount={data.data.keyData.carbohydrateCount}
