@@ -1,4 +1,5 @@
 import React from 'react'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar } from 'recharts';
 
 function SessionsDatasIntensity() {
   return (
@@ -7,7 +8,6 @@ function SessionsDatasIntensity() {
         </div>
   )
 }
-
 export default SessionsDatasIntensity
 
 /*    

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar } from 'recharts';
 import "./SessionsDatas.scss"
 import SessionsDatasActivity from './SessionsDatasActivity';
 import SessionsDatasIntensity from './SessionsDatasIntensity';
@@ -11,7 +10,7 @@ function SessionsDatas(props) {
         <SessionsDatasActivity/>
         <SessionsDatasIntensity/>
         <SessionsDatasScore
-            todayScore={props.todayScore}        
+            todayScore={props.todayScore}    
         />
     </div>
   )
