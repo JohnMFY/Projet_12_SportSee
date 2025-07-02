@@ -12,23 +12,30 @@ function SessionsDatasActivity() {
             setActivitiesTimeData(activitiesTimeData)
         })
     },[]);
-    /*
-    const formatXAxis = tickItem => {
-    return moment(tickItem).format('ddd'); 
-    }
-    */
+
+    const dayLetters = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
   return (
-    <div className='activitiesTime graph'>
+    <div className='activitiesTime'>
         {activitiesTimeData &&
         <ResponsiveContainer width="100%" height="100%">
-            <LineChart width={395} height={250} data={activitiesTimeData.data.sessions}
-            margin={{ top: 5, right: 100, left: -20, bottom: 10}}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
+            <LineChart width="100%" height="100%" data={activitiesTimeData.data.sessions}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false}/>
+            <XAxis 
+                dataKey="day" 
+                tickFormatter={(day) => dayLetters[day - 1]} 
+                tick={{ fill: "white", fontSize: 15, opacity:"0.5" }}
+            />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="sessionLength"name='Durée moyenne des sessions' stroke="#8884d8" />
+            <Line 
+                type="monotone" 
+                dataKey="sessionLength" 
+                strokeWidth={5} 
+                strokeOpacity={0.5}
+                stroke="#FFFFFF"
+            />
             </LineChart>
         </ResponsiveContainer>}
     </div>

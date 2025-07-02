@@ -29,13 +29,15 @@ function SessionsDatasIntensity() {
         
     }));console.log(formattedData)
   return (
-        <div className='intensity graph'>
-            <RadarChart width={395} height={250} outerRadius="80%" data={formattedData}>
-                <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 10, 27, 49, 72, 95]}/>
-                <PolarAngleAxis dataKey="subject" />
-                <Radar dataKey="A" fill="rgba(255, 1, 1, 0.70)" />
-                <Tooltip />
-            </RadarChart>
+        <div className='intensity'>
+            <ResponsiveContainer width={395} height="100%">
+                <RadarChart width="100%" height="100%" outerRadius="70%" data={formattedData}>
+                    <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 10, 27, 49, 72, 95]}/>
+                    <PolarAngleAxis dataKey="subject" tick={{ fill: "white", fontSize: 15 }} />
+                    <Radar dataKey="A" fill="rgba(255, 1, 1, 0.70)" />
+                    <Tooltip />
+                </RadarChart>
+            </ResponsiveContainer>
         </div>
   )
 }

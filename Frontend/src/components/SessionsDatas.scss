@@ -4,8 +4,12 @@
     justify-content: space-between;
     width: 100%;
     .activitiesTime{
-        background-color: lightgray;
+        background-color: #FF0000;
         width: 33%;
+    }
+    .intensity{
+        background-color: #282D30;
+        border-radius: 5px;
     }
     .scorePercentage{
         position:absolute;
