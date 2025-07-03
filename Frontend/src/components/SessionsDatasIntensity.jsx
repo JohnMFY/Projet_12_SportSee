@@ -32,8 +32,8 @@ function SessionsDatasIntensity() {
   return (
         <div className='intensity'>
             <ResponsiveContainer width={400} height="100%">
-                <RadarChart width="100%" height="100%" outerRadius="78%" data={formattedData}>
-                    <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 15, 25, 65, 85, 125]}/>
+                <RadarChart width="100%" height="100%" outerRadius="81%" data={formattedData}>
+                    <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 15, 30, 65, 105, 135]}/>
                     <PolarAngleAxis dataKey="subject" tick={{ fill: "white", fontSize: 15 }} />
                     <Radar dataKey="A" fill="rgba(255, 1, 1, 0.70)" />
                     <Tooltip />

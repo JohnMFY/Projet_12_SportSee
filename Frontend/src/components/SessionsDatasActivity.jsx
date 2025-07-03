@@ -20,11 +20,12 @@ function SessionsDatasActivity() {
         const x = points[0].x;
         return (
             <rect
-            x={x}
-            y={0}
-            width={width}                       
-            height={350}
-            fill="rgba(0, 0, 0, 0.25)"
+                x={x}
+                y={0}
+                width={width}                       
+                height={350}
+                fill="rgba(0, 0, 0, 0.25)"
+                overflow={"hidden"}
             />
         );
     };
@@ -38,7 +39,7 @@ function SessionsDatasActivity() {
                 color: 'black',
                 padding: '1px 10px',
                 fontSize: '12px',
-                lineHeight: '1.5'
+                lineHeight: '1.5',
                 }}>
                 <p>{time}min</p>
                 </div>
@@ -65,7 +66,7 @@ function SessionsDatasActivity() {
                 tickLine={false}
                 tickFormatter={(day) => dayLetters[day - 1]} 
                 tick={{ fill: "white", fontSize: 15, opacity:"0.5" }}
-                  padding={{ left: 20, right: 20 }}
+                padding={{ left: 0, right: 0 }}
             />
             <YAxis 
                 hide={true}

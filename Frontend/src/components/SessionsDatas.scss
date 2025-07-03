@@ -6,7 +6,9 @@
     height: fit-content;
     .activitiesTime{
         background-color: #FF0000;
+        border-radius: 10px;
         position: relative;
+        overflow: hidden;
         h3{
             color: white;
             width: 50%;
@@ -17,7 +19,7 @@
     }
     .intensity{
         background-color: #282D30;
-        border-radius: 5px;
+        border-radius: 10px;
     }
     .score.graph {
         position: relative;
