@@ -26,8 +26,8 @@ function SessionsDatasIntensity() {
     const formattedData = data.data.data.map((data) => ({
         subject: kindMapping[data.kind],
         A: data.value,
-        
     }));console.log(formattedData)
+    
   return (
         <div className='intensity'>
             <ResponsiveContainer width={395} height="100%">

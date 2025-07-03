@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  background-color: black;
+  color: white;
+  height: 91px;
+}
+.header img {
+  margin: 1% 2%;
+}
+.header h2 {
+  margin-right: 5%;
+}/*# sourceMappingURL=Header.css.map */

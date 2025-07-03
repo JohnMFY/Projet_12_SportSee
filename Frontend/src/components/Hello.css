@@ -1,0 +1,20 @@
+.greetings {
+  width: 100%;
+}
+.greetings .helloUser {
+  display: flex;
+  flex-direction: row;
+}
+.greetings .helloUser h1 {
+  margin-top: 0%;
+  margin-bottom: 1%;
+  font-size: 36px;
+}
+.greetings .helloUser .name {
+  color: red;
+  margin-left: 1%;
+}
+.greetings p {
+  font-size: 18px;
+  margin-top: 0%;
+}/*# sourceMappingURL=Hello.css.map */

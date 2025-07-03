@@ -1,0 +1,30 @@
+.Nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 91px;
+  height: 89vh;
+  overflow: hidden;
+  float: left;
+}
+.Nav .icon .fa-solid {
+  width: 50px;
+  height: 50px;
+  color: #ff0101;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 50%;
+}
+.Nav .icon .fa-solid .fa-dumbbell {
+  rotate: 50deg;
+}
+.Nav p {
+  rotate: 270deg;
+  width: 190px;
+}/*# sourceMappingURL=Nav.css.map */

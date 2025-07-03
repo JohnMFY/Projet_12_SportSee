@@ -1,0 +1,10 @@
+.dailyActivity {
+  display: flex;
+  margin-bottom: 1%;
+  padding: 1%;
+  width: 100%;
+}
+.dailyActivity h3 {
+  position: absolute;
+  margin-top: 0%;
+}/*# sourceMappingURL=DailyActivity.css.map */

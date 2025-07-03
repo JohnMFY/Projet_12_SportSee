@@ -1,0 +1,53 @@
+.nutrition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 20%;
+  height: 540px;
+  padding-left: 3%;
+}
+.nutrition .dataNutrion {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FBFBFB;
+  padding: 5% 10%;
+  width: 100%;
+  border-radius: 10px;
+}
+.nutrition .dataNutrion h4 {
+  margin-bottom: 1%;
+}
+.nutrition .dataNutrion p {
+  margin-top: 1%;
+  color: #282D30;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0px;
+}
+.nutrition .dataNutrion .fa-solid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px;
+  width: 60px;
+  height: 60px;
+}
+.nutrition .dataNutrion .fa-fire {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.25);
+}
+.nutrition .dataNutrion .fa-drumstick-bite {
+  color: rgb(74, 184, 255);
+  background-color: rgba(74, 184, 255, 0.25);
+}
+.nutrition .dataNutrion .fa-apple-whole {
+  color: rgb(253, 204, 12);
+  background-color: rgba(253, 204, 12, 0.25);
+}
+.nutrition .dataNutrion .fa-burger {
+  color: rgb(253, 81, 129);
+  background-color: rgba(253, 81, 129, 0.25);
+}/*# sourceMappingURL=Nutrition.css.map */

@@ -1,0 +1,19 @@
+.dashboard {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2% 4% 0% 4%;
+}
+.dashboard .dashboardData {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.dashboard .dashboardData .dashboardGraph {
+  display: flex;
+  flex-flow: row wrap;
+}
+.dashboard .dashboardData .graph {
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}/*# sourceMappingURL=Dashborad.css.map */

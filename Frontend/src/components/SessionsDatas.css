@@ -1,0 +1,31 @@
+.sessionsDatas {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.sessionsDatas .activitiesTime {
+  background-color: #FF0000;
+  width: 33%;
+}
+.sessionsDatas .intensity {
+  background-color: #282D30;
+  border-radius: 5px;
+}
+.sessionsDatas .scorePercentage {
+  position: absolute;
+  margin: 0%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  width: 75px;
+  right: 30%;
+  bottom: 15%;
+}
+.sessionsDatas .scorePercentage h3 {
+  margin: 0%;
+}
+.sessionsDatas .scorePercentage p {
+  margin: 0%;
+}/*# sourceMappingURL=SessionsDatas.css.map */
