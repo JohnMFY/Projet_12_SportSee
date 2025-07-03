@@ -22,17 +22,18 @@ function SessionsDatasIntensity() {
         "Speed",
         "Intensity"
     ]
-    
+
+    if (!data) return null;
     const formattedData = data.data.data.map((data) => ({
         subject: kindMapping[data.kind],
         A: data.value,
-    }));console.log(formattedData)
-    
+    }));
+
   return (
         <div className='intensity'>
-            <ResponsiveContainer width={395} height="100%">
-                <RadarChart width="100%" height="100%" outerRadius="70%" data={formattedData}>
-                    <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 10, 27, 49, 72, 95]}/>
+            <ResponsiveContainer width={400} height="100%">
+                <RadarChart width="100%" height="100%" outerRadius="78%" data={formattedData}>
+                    <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 15, 25, 65, 85, 125]}/>
                     <PolarAngleAxis dataKey="subject" tick={{ fill: "white", fontSize: 15 }} />
                     <Radar dataKey="A" fill="rgba(255, 1, 1, 0.70)" />
                     <Tooltip />

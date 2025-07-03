@@ -14,10 +14,11 @@ function SessionsDatasScore(props) {
 
   return (
         <div className='score graph'>
-            <h3>Score</h3>
-            <ResponsiveContainer width={395} height={250}>
+            
+            <ResponsiveContainer width={400} height={350}>
+                <h3>Score</h3>
                 <span className='scorePercentage'>
-                    <h3>{percentage}%</h3>
+                    <h3 className='percentage'>{percentage}%</h3>
                     <p>de votre objectif</p>
                 </span>
                 <PieChart margin={{left: 5,top: 5,right: 5,}} label="Score">
@@ -30,9 +31,9 @@ function SessionsDatasScore(props) {
                         cy="50%"
                         startAngle={90}
                         endAngle={450}
-                        innerRadius="50%"
+                        innerRadius="45%"
                         outerRadius="55%"
-                        cornerRadius="50%"
+                        cornerRadius="40%"
                     >
                     {data.map((_, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="none" />
