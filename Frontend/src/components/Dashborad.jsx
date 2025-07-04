@@ -4,7 +4,7 @@ import Hello from './Hello'
 import DailyActivity from './DailyActivity'
 import SessionsDatas from './SessionsDatas'
 import Nutrition from './Nutrition'
-
+import GetData from '../services/GetData'
 
 function Dashborad() {
    const [data, setData] = useState(null)
@@ -18,7 +18,12 @@ function Dashborad() {
             setData(data)
         })
     },[]);
-    
+
+    const getData = GetData(false); // or true for mock
+
+    useEffect(() => {
+        console.log('Fetched data:', getData);
+    }, [getData]);
   return (
     
     <div className='dashboard'>
