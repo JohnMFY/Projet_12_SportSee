@@ -4,28 +4,18 @@ import Hello from './Hello'
 import DailyActivity from './DailyActivity'
 import SessionsDatas from './SessionsDatas'
 import Nutrition from './Nutrition'
-import GetData from '../services/GetData'
+import { getUserData } from '../services/user-service'
 
 function Dashborad() {
    const [data, setData] = useState(null)
-   
-    useEffect(()=>{
-        fetch(`http://localhost:3000/user/12`)
-        .then((res) => {
-            return res.json();
-        })
-        .then(data => {
-            setData(data)
-        })
-    },[]);
-
-    const getData = GetData(false); // or true for mock
-
     useEffect(() => {
-        console.log('Fetched data:', getData);
-    }, [getData]);
+      const fetchData = async () => {
+          const userData = await getUserData();
+          setData(userData);
+      };fetchData();
+    }, []);
+
   return (
-    
     <div className='dashboard'>
         {data &&
         <Hello
