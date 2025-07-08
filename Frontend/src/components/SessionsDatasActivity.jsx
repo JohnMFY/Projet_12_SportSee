@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import { getSessionsData } from "../services/api-service"
 function SessionsDatasActivity() {
-    const [activitiesTimeData, setActivitiesTimeData] = useState(null);
-    useEffect(()=>{
-        fetch(`http://localhost:3000/user/12/average-sessions`)
-        .then((res) => {
-            return res.json();
-        })
-        .then(activitiesTimeData => {
-            setActivitiesTimeData(activitiesTimeData)
-        })
-    },[]);
+     const [sessionData, setSessionData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            const sessionData = await getSessionsData();
+            setSessionData(sessionData);
+        };fetchData();
+    }, []);
 
     const dayLetters = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
@@ -50,13 +47,13 @@ function SessionsDatasActivity() {
 
   return (
     <div className='activitiesTime'>
-        {activitiesTimeData &&
+        {sessionData &&
         <ResponsiveContainer width={400} height="100%">
             <h3>Durée moyenne des sessions</h3>
             <LineChart 
                 width="100%" 
                 height="100%" 
-                data={activitiesTimeData.data.sessions}
+                data={sessionData.data.sessions}
                 margin={{ top: 20, right: 0, bottom: 20, left: 0 }}
             >
             <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false}/>

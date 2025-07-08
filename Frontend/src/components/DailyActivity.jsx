@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import "./DailyActivity.scss"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
+import { getActivityData } from '../services/api-service'
 
 function DailyActivity() {
 
-  const [data, setData] = useState(null)
-  useEffect(()=>{
-      fetch(`http://localhost:3000/user/12/activity`)
-      .then((res) => {
-          return res.json();
-      })
-      .then(data => {
-          setData(data)
-      })
-  },[]);
+  const [activityData, setActivityData] = useState(null)   
+    useEffect(() => {
+        const fetchData = async () => {
+            const activityData = await getActivityData ();
+            setActivityData(activityData);
+        };fetchData();
+    }, []);
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -40,8 +38,8 @@ function DailyActivity() {
   return (
     <div className='dailyActivity graph'>
     <h3>Activité quotidienne</h3>
-     {data &&
-        <BarChart barGap='10' width={1350} height={290} data={data.data.sessions}>
+     {activityData &&
+        <BarChart barGap='10' width={1350} height={290} data={activityData.data.sessions}>
           <CartesianGrid strokeDasharray="4 4" vertical={false} horizontal={true}/>
           <XAxis dataKey="day" height={20}
             tickFormatter={(date) => {
