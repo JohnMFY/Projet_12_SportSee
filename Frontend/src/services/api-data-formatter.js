@@ -3,7 +3,7 @@ function dayAsLetter(){
     return (day) => dayLetter[day - 1]  
 };
 
-function formattedIntensityData(props){
+function formattedPerformanceData(props){
     const kindMapping = [
         0,
         "Cardio",
@@ -23,5 +23,5 @@ function formattedIntensityData(props){
 
 export{
     dayAsLetter,
-    formattedIntensityData
+    formattedPerformanceData
 }

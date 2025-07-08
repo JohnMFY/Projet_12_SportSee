@@ -1,38 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer, Tooltip } from "recharts";
+import { getPerformanceData } from '../services/api-service'
+import { formattedPerformanceData } from '../services/api-data-formatter'
 
 function SessionsDatasIntensity() {
-    const [data, setData] = useState(null)   
-    useEffect(()=>{
-        fetch(`http://localhost:3000/user/12/performance`)
-        .then((res) => {
-            return res.json();
-        })
-        .then(data => {
-            setData(data)
-        })
-    },[]);
-
-    const kindMapping = [
-        0,
-        "Cardio",
-        "Energy",
-        "Endurance",
-        "Strength",
-        "Speed",
-        "Intensity"
-    ]
-
-    if (!data) return null;
-    const formattedData = data.data.data.map((data) => ({
-        subject: kindMapping[data.kind],
-        A: data.value,
-    }));
+    const [intensityData, setIntensityData] = useState(null)   
+    useEffect(() => {
+        const fetchData = async () => {
+            const intensityData = await getPerformanceData();
+            setIntensityData(intensityData);
+        };fetchData();
+    }, []);
 
   return (
         <div className='intensity'>
             <ResponsiveContainer width={400} height="100%">
-                <RadarChart width="100%" height="100%" outerRadius="81%" data={formattedData}>
+                <RadarChart width="100%" height="100%" outerRadius="81%" data={formattedPerformanceData(intensityData)}>
                     <PolarGrid Type='polygon' radialLines={false} polarRadius={[0, 15, 30, 65, 105, 135]}/>
                     <PolarAngleAxis dataKey="subject" tick={{ fill: "white", fontSize: 15 }} />
                     <Radar dataKey="A" fill="rgba(255, 1, 1, 0.70)" />
