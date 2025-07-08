@@ -4,7 +4,7 @@ import Hello from './Hello'
 import DailyActivity from './DailyActivity'
 import SessionsDatas from './SessionsDatas'
 import Nutrition from './Nutrition'
-import { getUserData } from '../services/user-service'
+import { getUserData } from '../services/api-service'
 
 function Dashborad() {
    const [data, setData] = useState(null)
