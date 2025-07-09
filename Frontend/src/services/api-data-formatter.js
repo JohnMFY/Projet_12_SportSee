@@ -4,7 +4,7 @@ function dayAsLetter(){
         if (day < 1 || day > 7) return '';
         return dayLetter[day - 1];
     };
-}
+};
 function sessionLineExtension(props) {   
     const first = props[0];
     const last = props[props.length - 1];
@@ -13,7 +13,7 @@ function sessionLineExtension(props) {
         ...props,
         { ...last, day: 8 }                     
     ];
-}
+};
 function formattedPerformanceData(props){
     const kindMapping = [
         0,
@@ -39,10 +39,10 @@ function formattedScoreData(props){
         { name: "Remaining", value: remainsToBeDone },
     ];
     return data
-}
+};
 function formattedPercentageData(props){
     return props.todayScore * 100
-}
+};
 
 export{
     dayAsLetter,
