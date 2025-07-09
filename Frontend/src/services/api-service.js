@@ -1,4 +1,4 @@
-const isMocked = false;
+const isMocked = true;
 const getUserData = async () => {
     if (isMocked === true) {
         return{
@@ -22,7 +22,7 @@ const getUserData = async () => {
     const response = await fetch(`http://localhost:3000/user/12`);
     const userData = await response.json();
     return userData;
-}
+};
 const getActivityData = async () => {
     if (isMocked === true) {
         return {
@@ -71,7 +71,7 @@ const getActivityData = async () => {
     const response = await fetch(`http://localhost:3000/user/12/activity`);
     const activityData = await response.json();
     return activityData;
-}
+};
 const getSessionsData = async () => {
     if (isMocked === true) {
         return {
@@ -113,7 +113,7 @@ const getSessionsData = async () => {
     const response = await fetch(`http://localhost:3000/user/12/average-sessions`);
     const sessionsData = await response.json();
     return sessionsData;
-}
+};
 const getPerformanceData = async () => {
     if (isMocked === true) {
         return {
@@ -145,7 +145,7 @@ const getPerformanceData = async () => {
                         "kind": 4
                     },
                     {
-                        "value": 200,
+                        "value": 150,
                         "kind": 5
                     },
                     {
@@ -159,7 +159,7 @@ const getPerformanceData = async () => {
     const response = await fetch(`http://localhost:3000/user/12/performance`);
     const performanceData = await response.json();
     return performanceData;
-}
+};
 export{
     getUserData,
     getActivityData,
