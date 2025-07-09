@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getSessionsData } from "../services/api-service"
-import { dayAsLetter } from '../services/api-data-formatter'
+import { dayAsLetter, sessionLineExtension } from '../services/api-data-formatter'
 
 function SessionsDatasActivity() {
     const [sessionData, setSessionData] = useState(null);
     useEffect(() => {
         const fetchData = async () => {
             const sessionData = await getSessionsData();
-            setSessionData(sessionData);
+            const extension = sessionLineExtension(sessionData.data.sessions);
+            setSessionData({
+            ...sessionData,
+            data: { ...sessionData.data, sessions: extension }
+        });
         };fetchData();
     }, []);
 
@@ -63,7 +67,7 @@ function SessionsDatasActivity() {
                 tickLine={false}
                 tickFormatter={dayAsLetter()} 
                 tick={{ fill: "white", fontSize: 15, opacity:"0.5" }}
-                padding={{ left: 0, right: 0 }}
+                padding={{ left: -30, right: -30 }}
             />
             <YAxis 
                 hide={true}

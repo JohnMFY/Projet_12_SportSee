@@ -1,8 +1,19 @@
 function dayAsLetter(){
     const dayLetter = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-    return (day) => dayLetter[day - 1]  
-};
-
+    return (day) => {
+        if (day < 1 || day > 7) return '';
+        return dayLetter[day - 1];
+    };
+}
+function sessionLineExtension(props) {   
+    const first = props[0];
+    const last = props[props.length - 1];
+    return [
+        { ...first, day: 0},                   
+        ...props,
+        { ...last, day: 8 }                     
+    ];
+}
 function formattedPerformanceData(props){
     const kindMapping = [
         0,
@@ -23,5 +34,6 @@ function formattedPerformanceData(props){
 
 export{
     dayAsLetter,
+    sessionLineExtension,
     formattedPerformanceData
 }
