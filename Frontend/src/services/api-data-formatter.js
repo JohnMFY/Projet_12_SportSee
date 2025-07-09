@@ -31,9 +31,23 @@ function formattedPerformanceData(props){
     }));
     return formattedData
 };
+function formattedScoreData(props){
+    const score = props.todayScore;
+    const remainsToBeDone = 1 - score;
+    const data = [
+        { name: "Completed", value: score },
+        { name: "Remaining", value: remainsToBeDone },
+    ];
+    return data
+}
+function formattedPercentageData(props){
+    return props.todayScore * 100
+}
 
 export{
     dayAsLetter,
     sessionLineExtension,
-    formattedPerformanceData
+    formattedPerformanceData,
+    formattedScoreData,
+    formattedPercentageData
 }

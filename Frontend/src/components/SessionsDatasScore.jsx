@@ -1,16 +1,12 @@
 import React from 'react'
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { formattedScoreData, formattedPercentageData } from '../services/api-data-formatter'
 
 function SessionsDatasScore(props) {
     
-    const percentage = props.todayScore * 100;
+    const percentage = formattedPercentageData(props);
     const COLORS = ["#FF0000", "transparent"];
-    const score = props.todayScore;
-    const remainsToBeDone = 1 - score;
-    const data = [
-        { name: "Completed", value: score },
-        { name: "Remaining", value: remainsToBeDone },
-    ];
+    const data = formattedScoreData(props);
 
   return (
         <div className='score graph'>
