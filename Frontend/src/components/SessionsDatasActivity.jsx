@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getSessionsData } from "../services/api-service"
+import { dayAsLetter } from '../services/api-data-formatter'
+
 function SessionsDatasActivity() {
-     const [sessionData, setSessionData] = useState(null);
+    const [sessionData, setSessionData] = useState(null);
     useEffect(() => {
         const fetchData = async () => {
             const sessionData = await getSessionsData();
             setSessionData(sessionData);
         };fetchData();
     }, []);
-
-    const dayLetters = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
     const CustomCursor = (props) => {
         const { points, width} = props;
@@ -61,7 +61,7 @@ function SessionsDatasActivity() {
                 dataKey="day" 
                 axisLine={false}
                 tickLine={false}
-                tickFormatter={(day) => dayLetters[day - 1]} 
+                tickFormatter={dayAsLetter()} 
                 tick={{ fill: "white", fontSize: 15, opacity:"0.5" }}
                 padding={{ left: 0, right: 0 }}
             />
