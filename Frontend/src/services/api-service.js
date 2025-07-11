@@ -1,4 +1,4 @@
-const isMocked = true;
+const isMocked = false;
 const getUserData = async () => {
     if (isMocked === true) {
         return{
