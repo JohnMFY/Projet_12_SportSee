@@ -9,9 +9,8 @@ function SessionsDatasScore(props) {
     const data = formattedScoreData(props);
 
   return (
-        <div className='score graph'>
-            
-            <ResponsiveContainer width={400} height={350}>
+        <div className='score graph'>  
+            <ResponsiveContainer width="100%" height="100%">
                 <h3>Score</h3>
                 <span className='scorePercentage'>
                     <h3 className='percentage'>{percentage}%</h3>

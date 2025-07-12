@@ -52,7 +52,7 @@ function SessionsDatasActivity() {
   return (
     <div className='activitiesTime'>
         {sessionData &&
-        <ResponsiveContainer width={400} height="100%">
+        <ResponsiveContainer width="100%" height="100%">
             <h3>Durée moyenne des sessions</h3>
             <LineChart 
                 width="100%" 
